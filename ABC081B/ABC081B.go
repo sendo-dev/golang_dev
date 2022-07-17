@@ -32,12 +32,17 @@ func main() {
 	/*
 		Goにwhile文はない
 		loopやgotoを利用する
+		※for {if check {return}} でもよい
 	*/
 	var check bool = true
 	var loopCnt int = 0
 
 loop:
 
+	/*
+		Len(slice)で配列の要素数を取得できる。
+		※len()はバイト長の取得
+	*/
 	for i := 0; i < sliceLen; i++ {
 		if slice[i]%2 == 0 {
 			slice[i] = slice[i] / 2
