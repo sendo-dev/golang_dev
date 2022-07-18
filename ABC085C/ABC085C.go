@@ -5,11 +5,8 @@ import "fmt"
 func main() {
 
 	x, y, z := -1, -1, -1
-	var N int
-	var Y int
-
-	fmt.Scan(&N)
-	fmt.Scan(&Y)
+	var N, Y int
+	fmt.Scan(&N, &Y)
 
 	for i := Y / 10000; i >= 0; i-- {
 		for j := (Y - 10000*i) / 5000; j >= 0; j-- {
