@@ -19,7 +19,11 @@ func main() {
 		fmt.Scan(&tmpNum)
 		list = append(list, tmpNum)
 	}
-	// 逆順にソート
+
+	/*
+		昇順ソート：sort.Ints(list) ※Intsは sort.Sort(sort.IntSlice(numbers)) を呼んでいるだけ
+		降順ソート：sort.Sort(sort.Reverse(sort.IntSlice(numbers)))
+	*/
 	sort.Sort(sort.Reverse(sort.IntSlice(list)))
 
 	for i := 0; i < n; i++ {
