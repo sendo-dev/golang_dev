@@ -4,33 +4,26 @@ import "fmt"
 
 func main() {
 
-	const tenThousand int = 10000
-	const fiveThousand int = 5000
-	const thousand int = 1000
-	resultMap := map[string]int{"i": -1, "j": -1, "k": -1}
-	var n int
-	var y int
+	x, y, z := -1, -1, -1
+	var N int
+	var Y int
 
-	fmt.Scan(&n)
-	fmt.Scan(&y)
+	fmt.Scan(&N)
+	fmt.Scan(&Y)
 
-	endFlg := false
-	for i := y / tenThousand; i >= 0; i-- {
-		for j := 0; j <= n-i; j++ {
-			k := n - i - j
-			if tenThousand*i+fiveThousand*j+thousand*k == y {
-				resultMap["i"] = i
-				resultMap["j"] = j
-				resultMap["k"] = k
-				endFlg = true
+	for i := Y / 10000; i >= 0; i-- {
+		for j := (Y - 10000*i) / 5000; j >= 0; j-- {
+			k := N - i - j
+			if 10000*i+5000*j+1000*k == Y {
+				x, y, z = i, j, k
 				break
 			}
 		}
-		if endFlg {
+		if x > -1 {
 			break
 		}
 	}
 
-	fmt.Print(resultMap["i"], resultMap["j"], resultMap["k"])
+	fmt.Print(x, y, z)
 
 }
